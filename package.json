@@ -1,0 +1,28 @@
+{
+  "name": "dare-to-connect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dare To Connect",
+  "author": "Erik Bernoth",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^3.13.1",
+    "gatsby-plugin-google-analytics": "^3.14.0",
+    "gatsby-plugin-mdx": "^2.14.0",
+    "gatsby-plugin-sitemap": "^4.10.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
