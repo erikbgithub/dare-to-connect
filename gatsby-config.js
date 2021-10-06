@@ -21,5 +21,7 @@ module.exports = {
     },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-remark-images",
+    "gatsby-remark-prismjs",
   ],
 };
