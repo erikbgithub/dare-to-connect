@@ -52,3 +52,31 @@
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+## File structure
+
+```
+$ tree .
+.
+├── gatsby-config.js
+├── package.json
+├── package-lock.json
+├── public
+│   ├── page-data
+│   │   ├── 404.html
+│   │   │   └── page-data.json
+│   │   ├── dev-404-page
+│   │   │   └── page-data.json
+│   │   └── index
+│   │       └── page-data.json
+│   ├── render-page.js
+│   ├── render-page.js.map
+│   └── static
+├── README.md
+└── src
+    ├── images
+    │   └── icon.png
+    └── pages
+        ├── 404.js
+        └── index.js
+```
