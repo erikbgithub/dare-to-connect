@@ -7,12 +7,12 @@ const BlogPage = ({data}) => {
         <Layout title="My WIP Blog Posts">
             <p> This page will show the work in progress blog entries.</p>
             {
-                data.allMdx.nodes.map(node => (
-                    <article key={node.id}>
-                        <Link to={`/blog/${node.slug}`}>
-                            <h2>{node.frontmatter.title}</h2>
+                data.allFile.edges.map(edge => (
+                    <article key={edge.node.childrenMdx[0].id}>
+                        <Link to={`/blog/${edge.node.childrenMdx[0].slug}`}>
+                            <h2>{edge.node.childrenMdx[0].frontmatter.title}</h2>
                         </Link>
-                        <p>Posted: {node.frontmatter.date}</p>
+                        <p>Posted: {edge.node.childrenMdx[0].frontmatter.date}</p>
                     </article>
                 ))
             }
@@ -22,14 +22,21 @@ const BlogPage = ({data}) => {
 
 export const query = graphql`
 query {
-  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-    nodes {
-      frontmatter {
-        date(formatString: "MMMM D, YYYY")
-        title
+  allFile(
+    filter: {sourceInstanceName: {eq: "wip"}}
+    sort: {order: DESC, fields: modifiedTime}
+  ) {
+    edges {
+      node {
+        childrenMdx {
+          frontmatter {
+            title
+            date(formatString: "YYYY-MM-DD")
+          }
+          id
+          slug
+        }
       }
-      id
-      slug
     }
   }
 }
