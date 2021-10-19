@@ -1,13 +1,5 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import {
-    container,
-    heading,
-    navLinks,
-    navLinkItem,
-    navLinkText,
-    siteTitle
-} from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -20,27 +12,27 @@ const Layout = ({ pageTitle, children }) => {
         }
     `)
     return (
-        <div className={container}>
+        <div className="max-w-screen-sm mx-auto font-sans">
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-            <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+            <header className="text-purple-900 text-5xl font-extrabold my-12">{data.site.siteMetadata.title}</header>
             <nav>
-                <ul className={navLinks}>
-                    <li className={navLinkItem}>
-                        <Link to="/" className={navLinkText}>Home</Link>
+                <ul className="flex list-none">
+                    <li className="pr-8">
+                        <Link to="/" className="underline">Home</Link>
                     </li>
-                    <li className={navLinkItem}>
-                        <Link to="/about" className={navLinkText}>About</Link>
+                    <li className="pr-8">
+                        <Link to="/about" className="underline">About</Link>
                     </li>
-                    <li className={navLinkItem}>
-                        <Link to="/blog" className={navLinkText}>Blog</Link>
+                    <li className="pr-8">
+                        <Link to="/blog" className="underline">Blog</Link>
                     </li>
-                    <li className={navLinkItem}>
-                        <Link to="/wip" className={navLinkText}>WIP Posts</Link>
+                    <li className="pr-8">
+                        <Link to="/wip" className="underline">WIP Posts</Link>
                     </li>
                 </ul>
             </nav>
             <main>
-                <h1 className={heading}>{pageTitle}</h1>
+                <h1 className="text-3xl font-extrabold text-purple-900 my-5">{pageTitle}</h1>
                 {children}
             </main>
         </div>

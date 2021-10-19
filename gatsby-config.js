@@ -26,15 +26,7 @@ module.exports = {
         path: `${__dirname}/wip`,
       },
     },
-    {
-        resolve: `gatsby-plugin-sass`,
-        options: {
-            postCssPlugins: [
-                require("tailwindcss"),
-                require("./tailwind.config.js"),
-            ],
-        },
-    },
+    "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-remark-images",

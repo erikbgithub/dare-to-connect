@@ -9,7 +9,7 @@ const BlogPage = ({data}) => {
                 data.allFile.edges.map(edge => (
                     <article key={edge.node.childrenMdx[0].id}>
                         <Link to={`/blog/${edge.node.childrenMdx[0].slug}`}>
-                            <h2>{edge.node.childrenMdx[0].frontmatter.title}</h2>
+                            <h2 className="text-2xl font-extrabold text-purple-900 my-5 underline">{edge.node.childrenMdx[0].frontmatter.title}</h2>
                         </Link>
                         <p>Posted: {edge.node.childrenMdx[0].frontmatter.date}</p>
                     </article>
